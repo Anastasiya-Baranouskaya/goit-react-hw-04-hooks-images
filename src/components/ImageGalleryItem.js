@@ -1,16 +1,25 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
 export default function ImageGalleryItem({
   onClose,
   largeImageURL,
   webformatURL,
-  id,
 }) {
-  const onClickGalleryItem = () => {
-    onClose(largeImageURL);
-  };
-
   return (
-    <li className="ImageGalleryItem" onClick={onClickGalleryItem}>
-      <img src={webformatURL} alt={id} className="ImageGalleryItem-image" />
+    <li className="ImageGalleryItem" onClick={() => onClose(largeImageURL)}>
+      <img
+        src={webformatURL}
+        data-source={largeImageURL}
+        alt="pictures"
+        className="ImageGalleryItem-image"
+      />
     </li>
   );
 }
+
+ImageGalleryItem.propTypes = {
+  webformatURL: PropTypes.string.isRequired,
+  largeImageURL: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
