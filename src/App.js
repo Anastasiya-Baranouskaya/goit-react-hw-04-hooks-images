@@ -58,9 +58,6 @@ export default function App() {
 
   const handleClick = () => {
     setPage(prevPage => prevPage + 1);
-
-    console.log('arr in HandleClick:', arr);
-    console.log('page in handleClick:', page);
   };
 
   return (

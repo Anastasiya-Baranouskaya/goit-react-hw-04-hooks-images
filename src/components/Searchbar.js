@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 
@@ -46,3 +47,8 @@ export default function Searchbar({
     </header>
   );
 }
+Searchbar.propTypes = {
+  clearRender: propTypes.func.isRequired,
+  onValueSubmit: propTypes.func.isRequired,
+  onPageSubmit: propTypes.func.isRequired,
+};

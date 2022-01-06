@@ -21,7 +21,11 @@ export default function ImageGallery({ arr, onClose, handleClick }) {
 }
 
 ImageGallery.propTypes = {
-  arr: PropTypes.array.isRequired,
+  arr: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    }),
+  ),
   onClose: PropTypes.func.isRequired,
   handleClick: PropTypes.func.isRequired,
 };
